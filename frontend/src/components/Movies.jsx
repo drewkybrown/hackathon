@@ -21,7 +21,7 @@ function Movies({ movies }) {
               </li>
             ))
           ) : (
-            <p>No movies found!</p>
+            <p></p>
           )}
         </ul>
       </header>

@@ -20,7 +20,8 @@ function App() {
       // Construct the URL with the search term and API key
       const url = `http://www.omdbapi.com/?s=${encodeURIComponent(
         searchTerm
-      )}&apikey=5c85e8c0`;
+      )}&apikey=${import.meta.env.VITE_API_KEY}`;
+      console.log(import.meta.env.VITE_API_KEY); // Should output: 5c85e8c0
 
       const response = await fetch(url);
 
