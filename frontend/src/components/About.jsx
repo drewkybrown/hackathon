@@ -4,8 +4,10 @@ import { useParams } from "react-router-dom";
 import "./About.css";
 
 function About() {
+  // Define a state variable to hold the movie details
   const [movieDetails, setMovieDetails] = useState(null);
-  const { id } = useParams(); // This will get the movie ID from the URL
+  // Use the useParams hook to access the movie ID
+  const { id } = useParams();
 
   useEffect(() => {
     // Fetch movie details from the API
@@ -13,7 +15,7 @@ function About() {
     const fetchMovieDetails = async () => {
       try {
         const response = await fetch(
-          `http://www.omdbapi.com/?i=${id}&apikey=your-api-key`
+          `http://www.omdbapi.com/?i=${id}&apikey=5c85e8c0`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -38,6 +40,7 @@ function About() {
           <p>Year: {movieDetails.Year}</p>
           <p>Genre: {movieDetails.Genre}</p>
           <p>Director: {movieDetails.Director}</p>
+          <p>Type: {movieDetails.Type}</p>
           {/* ... more details */}
         </div>
       ) : (
